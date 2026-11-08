@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import logo from "@/assets/elitis-logo.png.asset.json";
+import logo from "@/assets/logo.png";
 
 const nav = [
   { to: "/", label: "Accueil" },
@@ -15,7 +15,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo.url} alt="ELITIS AYANG" className="h-12 w-auto" />
+          <img src={logo} alt="ELITIS AYANG" className="h-12 w-auto" />
         </Link>
         <nav className="flex flex-wrap gap-x-6 gap-y-1 text-sm font-medium">
           {nav.map((n) => (
