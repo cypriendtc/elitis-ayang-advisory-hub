@@ -6,6 +6,8 @@ import img from "@/assets/formation.jpg";
 export const Route = createFileRoute("/formation")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Formation professionnelle — ELITIS AYANG" },
       { name: "description", content: "Formations sur mesure en management, leadership, relation client et compétences professionnelles au Cameroun." },
       { property: "og:title", content: "Formation — ELITIS AYANG" },

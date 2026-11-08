@@ -6,6 +6,8 @@ import img from "@/assets/conseil.jpg";
 export const Route = createFileRoute("/conseil")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Conseil aux entreprises — ELITIS AYANG" },
       { name: "description", content: "Stratégie, organisation, création d'entreprise et accompagnement des dirigeants au Cameroun." },
       { property: "og:title", content: "Conseil — ELITIS AYANG" },

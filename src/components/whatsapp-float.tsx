@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 
-// Numéro WhatsApp du cabinet (format international sans « + »).
-const WHATSAPP_NUMBER = "237600000000";
-const WHATSAPP_MESSAGE =
-  "Bonjour ELITIS AYANG, je souhaite échanger avec vous au sujet de vos services.";
+import { useLanguage } from "@/lib/language";
+import { whatsappLink } from "@/lib/site-contacts";
+import { Button } from "@/components/ui/button";
 
 function WhatsAppIcon({ className = "" }: { className?: string }) {
   return (
@@ -15,6 +14,7 @@ function WhatsAppIcon({ className = "" }: { className?: string }) {
 }
 
 export function WhatsAppFloat() {
+  const { language, tree } = useLanguage();
   const [showBubble, setShowBubble] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -23,19 +23,19 @@ export function WhatsAppFloat() {
     return () => clearTimeout(t);
   }, []);
 
-  const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const href = whatsappLink(language);
 
-  return (
+  return tree(
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {showBubble && !dismissed && (
         <div className="animate-whatsapp-pop relative max-w-[240px] rounded-lg border border-border bg-card p-4 shadow-xl">
-          <button
+          <Button variant="ghost" size="icon"
             onClick={() => setDismissed(true)}
             aria-label="Fermer le message"
             className="absolute right-2 top-2 text-muted-foreground transition-colors hover:text-foreground"
           >
             <X className="h-3.5 w-3.5" />
-          </button>
+          </Button>
           <p className="text-sm font-semibold">Une question ?</p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
             Écrivez-nous directement sur WhatsApp, nous répondons rapidement.

@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { Check } from "lucide-react";
 import { Reveal, Counter } from "./reveal";
+import { useLanguage } from "@/lib/language";
 import { CtaBand } from "./site-layout";
 
 export type ServicePageData = {
@@ -20,7 +21,8 @@ export type ServicePageData = {
 };
 
 export function ServicePage({ d }: { d: ServicePageData }) {
-  return (
+  const { tree } = useLanguage();
+  return tree(
     <>
       <section className="relative overflow-hidden bg-navy-deep text-primary-foreground">
         <img src={d.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40 animate-ken-burns" />
