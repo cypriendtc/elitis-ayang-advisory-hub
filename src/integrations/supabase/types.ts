@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      partner_applications: {
+        Row: {
+          address: string
+          capacity: number
+          city: string
+          consent: boolean
+          contact_name: string
+          created_at: string
+          description: string
+          email: string
+          id: string
+          language: string
+          phone: string
+          property_name: string
+          property_type: string
+          status: string
+          website: string
+        }
+        Insert: {
+          address: string
+          capacity: number
+          city: string
+          consent: boolean
+          contact_name: string
+          created_at?: string
+          description: string
+          email: string
+          id?: string
+          language: string
+          phone: string
+          property_name: string
+          property_type: string
+          status?: string
+          website?: string
+        }
+        Update: {
+          address?: string
+          capacity?: number
+          city?: string
+          consent?: boolean
+          contact_name?: string
+          created_at?: string
+          description?: string
+          email?: string
+          id?: string
+          language?: string
+          phone?: string
+          property_name?: string
+          property_type?: string
+          status?: string
+          website?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
