@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ShieldCheck, Lock, Sparkles, Clock, Quote } from "lucide-react";
-const hero = new URL("../assets/hero.jpg", import.meta.url).href;
+import hero from "@/assets/hero.jpg";
 import conseil from "@/assets/conseil.jpg";
 import formation from "@/assets/formation.jpg";
 import conciergerie from "@/assets/conciergerie.jpg";
