@@ -32,23 +32,23 @@ function Contact() {
   return tree(
     <>
       <PageHero eyebrow="Contact" title="Échangeons sur vos besoins." />
-      <section className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-[1fr_1.4fr]">
-        <div className="space-y-6">
+      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:gap-12 sm:px-6 sm:py-20 md:grid-cols-[1fr_1.4fr]">
+        <div className="min-w-0 space-y-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Adresse</p>
             <p className="mt-1 font-display text-2xl">Douala — Yaoundé, Cameroun</p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">E-mail</p>
-            <a className="mt-1 inline-block font-display text-2xl" href="mailto:contact@elitis-ayang.com">contact@elitis-ayang.com</a>
+            <a className="mt-1 inline-block break-all font-display text-xl sm:text-2xl" href="mailto:contact@elitis-ayang.com">contact@elitis-ayang.com</a>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Téléphone</p>
-            <a className="mt-1 inline-block font-display text-2xl" href={`tel:${CONTACTS.phone}`}>{CONTACTS.phone}</a>
+            <a className="mt-1 inline-block font-display text-xl sm:text-2xl" href={`tel:${CONTACTS.phone}`}>{CONTACTS.phone}</a>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">WhatsApp</p>
-            <a className="mt-1 inline-block font-display text-2xl" href={`https://wa.me/${CONTACTS.whatsapp.replace("+", "")}`} target="_blank" rel="noopener noreferrer">{CONTACTS.whatsapp}</a>
+            <a className="mt-1 inline-block font-display text-xl sm:text-2xl" href={`https://wa.me/${CONTACTS.whatsapp.replace("+", "")}`} target="_blank" rel="noopener noreferrer">{CONTACTS.whatsapp}</a>
           </div>
           <a href={CONTACTS.facebook} target="_blank" rel="noopener noreferrer" className="inline-block border-b border-gold pb-1 text-sm font-semibold">Suivez-nous sur Facebook</a>
         </div>

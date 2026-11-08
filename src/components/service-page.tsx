@@ -29,20 +29,20 @@ export function ServicePage({ d }: { d: ServicePageData }) {
       <section className="relative overflow-hidden bg-navy-deep text-primary-foreground">
         <img src={d.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40 animate-ken-burns" />
         <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="relative mx-auto max-w-6xl px-6 py-28 md:py-36">
-          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.3em] text-gold">{d.eyebrow}</p>
-          <h1 className="animate-fade-up mt-4 max-w-3xl text-5xl font-semibold leading-tight [animation-delay:150ms] md:text-6xl">{d.title}</h1>
-          <p className="animate-fade-up mt-6 max-w-2xl text-lg opacity-85 [animation-delay:300ms]">{d.intro}</p>
+        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 md:py-36">
+          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.2em] text-gold sm:tracking-[0.3em]">{d.eyebrow}</p>
+          <h1 className="animate-fade-up mt-4 max-w-3xl text-4xl font-semibold leading-tight [animation-delay:150ms] sm:text-5xl md:text-6xl">{d.title}</h1>
+          <p className="animate-fade-up mt-6 max-w-2xl text-base opacity-85 [animation-delay:300ms] sm:text-lg">{d.intro}</p>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 md:grid-cols-2">
+      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:gap-14 sm:px-6 sm:py-24 md:grid-cols-2">
         <Reveal className="relative">
-          <div className="absolute -left-4 -top-4 h-full w-full border-2 border-gold" />
+          <div className="absolute -left-2 -top-2 h-full w-full border-2 border-gold sm:-left-4 sm:-top-4" />
           <img src={d.image} alt={d.imageAlt} loading="lazy" width={1200} height={912} className="relative w-full object-cover shadow-2xl" />
         </Reveal>
         <Reveal delay={150}>
-          <h2 className="text-4xl font-semibold md:text-5xl">{d.aboutTitle}</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">{d.aboutTitle}</h2>
           {d.about.map((p) => <p key={p} className="mt-5 leading-relaxed text-muted-foreground">{p}</p>)}
           <ul className="mt-8 space-y-3">
             {d.highlights.map((h) => (
@@ -53,8 +53,8 @@ export function ServicePage({ d }: { d: ServicePageData }) {
       </section>
 
       <section className="bg-secondary py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal><h2 className="text-center text-4xl font-semibold md:text-5xl">Nos prestations</h2></Reveal>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <Reveal><h2 className="text-center text-3xl font-semibold sm:text-4xl md:text-5xl">Nos prestations</h2></Reveal>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {d.services.map((s, i) => (
               <Reveal key={s.title} delay={i * 90}>
@@ -62,7 +62,7 @@ export function ServicePage({ d }: { d: ServicePageData }) {
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-gold transition duration-500 group-hover:rotate-12 group-hover:bg-gradient-gold group-hover:text-primary">
                     <s.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-6 text-2xl font-semibold">{s.title}</h3>
+                  <h3 className="mt-6 text-xl font-semibold sm:text-2xl">{s.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
                 </div>
               </Reveal>
@@ -72,18 +72,18 @@ export function ServicePage({ d }: { d: ServicePageData }) {
       </section>
 
       <section className="bg-navy-deep py-20 text-primary-foreground">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 text-center md:grid-cols-4">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 text-center sm:px-6 md:grid-cols-4">
           {d.stats.map((s) => (
             <div key={s.label}>
-              <p className="font-display text-6xl font-semibold text-gradient-gold"><Counter to={s.value} suffix={s.suffix} /></p>
+              <p className="font-display text-5xl font-semibold text-gradient-gold sm:text-6xl"><Counter to={s.value} suffix={s.suffix} /></p>
               <p className="mt-2 text-sm opacity-70">{s.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-4xl font-semibold md:text-5xl">Notre démarche</h2></Reveal>
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+        <Reveal><h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">Notre démarche</h2></Reveal>
         <div className="mt-14 grid gap-8 md:grid-cols-4">
           {d.steps.map((s, i) => (
             <Reveal key={s.title} delay={i * 120}>
@@ -98,15 +98,15 @@ export function ServicePage({ d }: { d: ServicePageData }) {
       </section>
 
       <section className="bg-secondary py-24">
-        <div className="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:gap-14 sm:px-6 md:grid-cols-2">
           <Reveal>
-            <h2 className="text-4xl font-semibold">Pour qui ?</h2>
+            <h2 className="text-3xl font-semibold sm:text-4xl">Pour qui ?</h2>
             <div className="mt-8 flex flex-wrap gap-3">
               {d.audience.map((a) => <span key={a} className="rounded-full border border-gold bg-card px-4 py-2 text-sm font-medium">{a}</span>)}
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <h2 className="text-4xl font-semibold">Questions fréquentes</h2>
+            <h2 className="text-3xl font-semibold sm:text-4xl">Questions fréquentes</h2>
             <div className="mt-8 divide-y divide-border border-y border-border">
               {d.faq.map((f) => (
                 <details key={f.q} className="group py-5">

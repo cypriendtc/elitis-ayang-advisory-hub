@@ -26,7 +26,7 @@ export function WhatsAppFloat() {
   const href = whatsappLink(language);
 
   return tree(
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       {showBubble && !dismissed && (
         <div className="animate-whatsapp-pop relative max-w-[240px] rounded-lg border border-border bg-card p-4 shadow-xl">
           <Button variant="ghost" size="icon"
@@ -49,7 +49,7 @@ export function WhatsAppFloat() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Discuter avec ELITIS AYANG sur WhatsApp"
-        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-110"
+        className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-whatsapp text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-110 sm:h-14 sm:w-14"
       >
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp opacity-30" />
         <WhatsAppIcon className="relative h-7 w-7" />

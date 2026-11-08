@@ -66,9 +66,9 @@ function Partners() {
   return tree(
     <>
       <PageHero eyebrow="Partenaires" title="Rejoignez notre réseau d'hébergements." />
-      <section className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <h2 className="text-3xl font-semibold">Propriétaires d'hôtels et d'appartements</h2>
+      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:gap-12 sm:px-6 sm:py-20 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="min-w-0">
+          <h2 className="text-2xl font-semibold sm:text-3xl">Propriétaires d'hôtels et d'appartements</h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
             Vous proposez un hébergement à Douala, Yaoundé ou ailleurs au Cameroun ? Présentez votre établissement à ELITIS AYANG pour rejoindre notre réseau de partenaires.
           </p>
@@ -82,7 +82,7 @@ function Partners() {
           </p>
         </div>
 
-        <div className="bg-card p-6 shadow-sm md:p-8">
+        <div className="min-w-0 bg-card p-4 shadow-sm sm:p-6 md:p-8">
           {status === "success" ? (
             <div role="status" className="py-8">
               <h2 className="font-display text-3xl font-semibold">Merci pour votre candidature !</h2>

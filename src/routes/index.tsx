@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ShieldCheck, Lock, Sparkles, Clock, Quote } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+const hero = new URL("../assets/hero.jpg", import.meta.url).href;
 import conseil from "@/assets/conseil.jpg";
 import formation from "@/assets/formation.jpg";
 import conciergerie from "@/assets/conciergerie.jpg";
@@ -57,12 +57,12 @@ function Index() {
       <section className="relative overflow-hidden">
         <img src={hero} alt="Rendez-vous d'affaires à Douala" width={1600} height={1008} className="absolute inset-0 h-full w-full object-cover animate-ken-burns" />
         <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="relative mx-auto max-w-6xl px-6 py-32 text-primary-foreground md:py-48">
-          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.3em] text-gold">Cabinet ELITIS AYANG · Cameroun</p>
-          <h1 className="animate-fade-up mt-5 max-w-3xl text-5xl font-semibold leading-[1.05] [animation-delay:150ms] md:text-7xl">
+        <div className="relative mx-auto max-w-6xl px-4 py-24 text-primary-foreground sm:px-6 sm:py-32 md:py-48">
+          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.2em] text-gold sm:tracking-[0.3em]">Cabinet ELITIS AYANG · Cameroun</p>
+          <h1 className="animate-fade-up mt-5 max-w-3xl text-4xl font-semibold leading-[1.05] [animation-delay:150ms] sm:text-5xl md:text-7xl">
             L'excellence au service de vos <span className="text-gradient-gold">ambitions</span>.
           </h1>
-          <p className="animate-fade-up mt-6 max-w-xl text-lg opacity-85 [animation-delay:300ms]">Conseil, formation et conciergerie haut de gamme : un interlocuteur unique, discret et disponible, à Douala, Yaoundé et partout au Cameroun.</p>
+          <p className="animate-fade-up mt-6 max-w-xl text-base opacity-85 [animation-delay:300ms] sm:text-lg">Conseil, formation et conciergerie haut de gamme : un interlocuteur unique, discret et disponible, à Douala, Yaoundé et partout au Cameroun.</p>
           <div className="animate-fade-up mt-10 flex flex-wrap gap-4 [animation-delay:450ms]">
             <Link to="/contact" className="animate-shine rounded-sm px-7 py-3 text-sm font-semibold text-accent-foreground shadow-lg transition hover:scale-105">Nous contacter</Link>
             <Link to="/conseil" className="rounded-sm border border-gold/60 px-7 py-3 text-sm font-semibold transition hover:bg-gold hover:text-accent-foreground">Nos expertises</Link>
@@ -76,18 +76,18 @@ function Index() {
         </div>
       </div>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-16 px-6 py-24 md:grid-cols-2">
+      <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:gap-16 sm:px-6 sm:py-24 md:grid-cols-2">
         <Reveal className="relative">
-          <div className="absolute -right-4 -bottom-4 h-full w-full border-2 border-gold" />
+          <div className="absolute -right-2 -bottom-2 h-full w-full border-2 border-gold sm:-right-4 sm:-bottom-4" />
           <img src={about} alt="Consultante du cabinet ELITIS AYANG" loading="lazy" width={1008} height={1200} className="relative w-full object-cover shadow-2xl" />
-          <div className="absolute -left-6 bottom-10 animate-float bg-primary p-6 text-primary-foreground shadow-xl">
-            <p className="font-display text-4xl text-gradient-gold">3 pôles</p>
+          <div className="absolute -left-2 bottom-6 animate-float bg-primary p-4 text-primary-foreground shadow-xl sm:-left-6 sm:bottom-10 sm:p-6">
+            <p className="font-display text-3xl text-gradient-gold sm:text-4xl">3 pôles</p>
             <p className="text-xs opacity-80">d'expertise complémentaires</p>
           </div>
         </Reveal>
         <Reveal delay={150}>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Qui sommes-nous</p>
-          <h2 className="mt-3 text-4xl font-semibold md:text-5xl">Un cabinet ancré au Cameroun, ouvert sur le monde.</h2>
+          <h2 className="mt-3 text-3xl font-semibold sm:text-4xl md:text-5xl">Un cabinet ancré au Cameroun, ouvert sur le monde.</h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">ELITIS AYANG est né d'une conviction : les entreprises, les dirigeants et les voyageurs exigeants méritent un partenaire capable de les accompagner globalement, avec professionnalisme et élégance.</p>
           <p className="mt-4 leading-relaxed text-muted-foreground">Notre force : réunir sous un même toit le conseil stratégique, la formation des talents et une conciergerie haut de gamme, pour vous faire gagner du temps et de la sérénité.</p>
           <Link to="/contact" className="mt-8 inline-block border-b-2 border-gold pb-1 text-sm font-semibold text-primary">Découvrir notre approche →</Link>
@@ -95,8 +95,8 @@ function Index() {
       </section>
 
       <section className="bg-secondary py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal><h2 className="max-w-2xl text-4xl font-semibold md:text-5xl">Trois pôles, une même exigence.</h2></Reveal>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <Reveal><h2 className="max-w-2xl text-3xl font-semibold sm:text-4xl md:text-5xl">Trois pôles, une même exigence.</h2></Reveal>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {poles.map((p, i) => (
               <Reveal key={p.to} delay={i * 120}>
@@ -104,8 +104,8 @@ function Index() {
                   <div className="overflow-hidden">
                     <img src={p.img} alt={p.title} loading="lazy" width={1200} height={912} className="h-56 w-full object-cover transition duration-700 group-hover:scale-110" />
                   </div>
-                  <div className="border-t-2 border-gold p-8">
-                    <h3 className="text-3xl font-semibold">{p.title}</h3>
+                  <div className="border-t-2 border-gold p-6 sm:p-8">
+                    <h3 className="text-2xl font-semibold sm:text-3xl">{p.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
                     <span className="mt-6 inline-block text-sm font-semibold text-primary transition group-hover:translate-x-2 group-hover:text-gold">Découvrir →</span>
                   </div>
@@ -117,18 +117,18 @@ function Index() {
       </section>
 
       <section className="bg-navy-deep py-20 text-primary-foreground">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 text-center md:grid-cols-4">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 text-center sm:px-6 md:grid-cols-4">
           {[[50, "+", "Entreprises accompagnées"], [500, "+", "Personnes formées"], [200, "+", "Séjours organisés"], [98, "%", "Clients satisfaits"]].map(([v, s, l]) => (
             <div key={l as string}>
-              <p className="font-display text-6xl font-semibold text-gradient-gold"><Counter to={v as number} suffix={s as string} /></p>
+              <p className="font-display text-5xl font-semibold text-gradient-gold sm:text-6xl"><Counter to={v as number} suffix={s as string} /></p>
               <p className="mt-2 text-sm opacity-70">{l}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-center text-4xl font-semibold md:text-5xl">Nos valeurs</h2></Reveal>
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+        <Reveal><h2 className="text-center text-3xl font-semibold sm:text-4xl md:text-5xl">Nos valeurs</h2></Reveal>
         <div className="mt-14 grid gap-8 md:grid-cols-4">
           {values.map((v, i) => (
             <Reveal key={v.t} delay={i * 100}>
@@ -145,12 +145,12 @@ function Index() {
       </section>
 
       <section className="bg-secondary py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal><h2 className="text-4xl font-semibold md:text-5xl">Ils nous font confiance</h2></Reveal>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <Reveal><h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl">Ils nous font confiance</h2></Reveal>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {testimonials.map((t, i) => (
               <Reveal key={t.a} delay={i * 120}>
-                <figure className="h-full bg-card p-8 shadow-sm">
+                <figure className="h-full bg-card p-6 shadow-sm sm:p-8">
                   <Quote className="h-8 w-8 text-gold" />
                   <blockquote className="mt-4 font-display text-xl leading-snug">« {t.q} »</blockquote>
                   <figcaption className="mt-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{t.a}</figcaption>

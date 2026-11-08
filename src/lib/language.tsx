@@ -55,7 +55,7 @@ export function useLanguage() {
     for (const key of ['alt', 'title', 'placeholder', 'aria-label', 'eyebrow']) {
       if (typeof element.props[key] === 'string') props[key] = t(element.props[key]);
     }
-    if ('children' in element.props) props.children = tree(element.props.children as ReactNode);
+    if ('children' in element.props) props['children'] = tree(element.props['children'] as ReactNode);
     return cloneElement(element, props);
   };
   return { ...context, t, tree };
