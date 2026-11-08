@@ -24,3 +24,7 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Hotel and apartment partner applications
+
+The `/partenaires` page accepts applications from hotels and apartments. Submissions are stored privately in the Supabase `partner_applications` table with a pending status; they are not published as listings automatically. Review each application and approve the partnership before presenting a property to clients. Apply `drizzle/migrations/0000_partner_applications.sql` to the connected Supabase project if it has not already been applied. The server submission function requires the existing Supabase service-role configuration.

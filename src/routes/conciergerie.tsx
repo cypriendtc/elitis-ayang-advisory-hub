@@ -16,6 +16,12 @@ export const Route = createFileRoute("/conciergerie")({
   }),
   component: () => (
     <ServicePage d={{
+      metadata: {
+        title: "Conciergerie haut de gamme au Cameroun — ELITIS AYANG",
+        description: "Accueil, transferts, réservations et assistance privée à Douala et Yaoundé pour voyageurs d'affaires, diaspora et expatriés.",
+        ogTitle: "Conciergerie — ELITIS AYANG",
+        ogDescription: "Un service clé en main : un seul interlocuteur pour tout.",
+      },
       eyebrow: "Pôle Conciergerie & Services",
       title: "Votre temps est précieux. Nous nous occupons du reste.",
       intro: "Hommes et femmes d'affaires, diplomates, expatriés, diaspora : un accompagnement local fiable, confidentiel et multilingue.",

@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/site-layout";
+import { useLanguage, usePageMetadata } from "@/lib/language";
+import { CONTACTS } from "@/lib/site-contacts";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -20,17 +22,35 @@ const field = "w-full rounded-sm border border-input bg-card px-4 py-3 text-sm o
 
 function Contact() {
   const [sent, setSent] = useState(false);
-  return (
+  const { tree } = useLanguage();
+  usePageMetadata({
+    title: "Contact — ELITIS AYANG",
+    description: "Contactez le cabinet ELITIS AYANG pour vos besoins en conseil, formation ou conciergerie.",
+    ogTitle: "Contactez ELITIS AYANG",
+    ogDescription: "Écrivez-nous, nous revenons vers vous rapidement.",
+  });
+  return tree(
     <>
       <PageHero eyebrow="Contact" title="Échangeons sur vos besoins." />
       <section className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-[1fr_1.4fr]">
         <div className="space-y-6">
-          {[["Adresse", "Douala — Yaoundé, Cameroun"], ["E-mail", "contact@elitis-ayang.com"], ["Téléphone", "+237 6XX XX XX XX"]].map(([k, v]) => (
-            <div key={k}>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">{k}</p>
-              <p className="mt-1 font-display text-2xl">{v}</p>
-            </div>
-          ))}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Adresse</p>
+            <p className="mt-1 font-display text-2xl">Douala — Yaoundé, Cameroun</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">E-mail</p>
+            <a className="mt-1 inline-block font-display text-2xl" href="mailto:contact@elitis-ayang.com">contact@elitis-ayang.com</a>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Téléphone</p>
+            <a className="mt-1 inline-block font-display text-2xl" href={`tel:${CONTACTS.phone}`}>{CONTACTS.phone}</a>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">WhatsApp</p>
+            <a className="mt-1 inline-block font-display text-2xl" href={`https://wa.me/${CONTACTS.whatsapp.replace("+", "")}`} target="_blank" rel="noopener noreferrer">{CONTACTS.whatsapp}</a>
+          </div>
+          <a href={CONTACTS.facebook} target="_blank" rel="noopener noreferrer" className="inline-block border-b border-gold pb-1 text-sm font-semibold">Suivez-nous sur Facebook</a>
         </div>
         {sent ? (
           <p className="font-display text-3xl">Merci ! Votre message a bien été pris en compte.</p>

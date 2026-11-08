@@ -6,7 +6,7 @@ import formation from "@/assets/formation.jpg";
 import conciergerie from "@/assets/conciergerie.jpg";
 import about from "@/assets/about.jpg";
 import { CtaBand } from "@/components/site-layout";
-import { useLanguage } from "@/lib/language";
+import { useLanguage, usePageMetadata } from "@/lib/language";
 import { Reveal, Counter } from "@/components/reveal";
 
 export const Route = createFileRoute("/")({
@@ -46,6 +46,12 @@ const sectors = ["Hôtellerie", "Banque & Finance", "Industrie", "Institutions",
 
 function Index() {
   const { tree } = useLanguage();
+  usePageMetadata({
+    title: "ELITIS AYANG — Cabinet de conseil, formation et conciergerie",
+    description: "ELITIS AYANG accompagne entreprises, dirigeants et voyageurs premium au Cameroun : conseil, formation et conciergerie haut de gamme.",
+    ogTitle: "ELITIS AYANG — Conseil, Formation, Conciergerie",
+    ogDescription: "Un seul interlocuteur de confiance pour vos projets au Cameroun.",
+  });
   return tree(
     <>
       <section className="relative overflow-hidden">

@@ -14,6 +14,7 @@ import { Route as ConciergerieRouteImport } from './routes/conciergerie'
 import { Route as ConseilRouteImport } from './routes/conseil'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FormationRouteImport } from './routes/formation'
+import { Route as PartenairesRouteImport } from './routes/partenaires'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,11 @@ const FormationRoute = FormationRouteImport.update({
   path: '/formation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PartenairesRoute = PartenairesRouteImport.update({
+  id: '/partenaires',
+  path: '/partenaires',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/conseil': typeof ConseilRoute
   '/contact': typeof ContactRoute
   '/formation': typeof FormationRoute
+  '/partenaires': typeof PartenairesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/conseil': typeof ConseilRoute
   '/contact': typeof ContactRoute
   '/formation': typeof FormationRoute
+  '/partenaires': typeof PartenairesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,14 +70,33 @@ export interface FileRoutesById {
   '/conseil': typeof ConseilRoute
   '/contact': typeof ContactRoute
   '/formation': typeof FormationRoute
+  '/partenaires': typeof PartenairesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/conciergerie' | '/conseil' | '/contact' | '/formation'
+  fullPaths:
+    | '/'
+    | '/conciergerie'
+    | '/conseil'
+    | '/contact'
+    | '/formation'
+    | '/partenaires'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/conciergerie' | '/conseil' | '/contact' | '/formation'
+  to:
+    | '/'
+    | '/conciergerie'
+    | '/conseil'
+    | '/contact'
+    | '/formation'
+    | '/partenaires'
   id:
-    '__root__' | '/' | '/conciergerie' | '/conseil' | '/contact' | '/formation'
+    | '__root__'
+    | '/'
+    | '/conciergerie'
+    | '/conseil'
+    | '/contact'
+    | '/formation'
+    | '/partenaires'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -78,6 +105,7 @@ export interface RootRouteChildren {
   ConseilRoute: typeof ConseilRoute
   ContactRoute: typeof ContactRoute
   FormationRoute: typeof FormationRoute
+  PartenairesRoute: typeof PartenairesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -117,6 +145,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/partenaires': {
+      id: '/partenaires'
+      path: '/partenaires'
+      fullPath: '/partenaires'
+      preLoaderRoute: typeof PartenairesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -126,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConseilRoute: ConseilRoute,
   ContactRoute: ContactRoute,
   FormationRoute: FormationRoute,
+  PartenairesRoute: PartenairesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

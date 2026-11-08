@@ -1,10 +1,11 @@
 import type { LucideIcon } from "lucide-react";
 import { Check } from "lucide-react";
 import { Reveal, Counter } from "./reveal";
-import { useLanguage } from "@/lib/language";
+import { useLanguage, usePageMetadata } from "@/lib/language";
 import { CtaBand } from "./site-layout";
 
 export type ServicePageData = {
+  metadata: { title: string; description: string; ogTitle: string; ogDescription: string };
   eyebrow: string;
   title: string;
   intro: string;
@@ -22,6 +23,7 @@ export type ServicePageData = {
 
 export function ServicePage({ d }: { d: ServicePageData }) {
   const { tree } = useLanguage();
+  usePageMetadata(d.metadata);
   return tree(
     <>
       <section className="relative overflow-hidden bg-navy-deep text-primary-foreground">

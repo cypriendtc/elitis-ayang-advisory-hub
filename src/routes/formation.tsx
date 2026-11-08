@@ -16,6 +16,12 @@ export const Route = createFileRoute("/formation")({
   }),
   component: () => (
     <ServicePage d={{
+      metadata: {
+        title: "Formation professionnelle — ELITIS AYANG",
+        description: "Formations sur mesure en management, leadership, relation client et compétences professionnelles au Cameroun.",
+        ogTitle: "Formation — ELITIS AYANG",
+        ogDescription: "Développez les compétences de vos équipes avec des programmes sur mesure.",
+      },
       eyebrow: "Pôle Formation",
       title: "Former aujourd'hui les talents de demain.",
       intro: "Des programmes en inter ou intra-entreprise, conçus selon vos objectifs et animés par des praticiens expérimentés.",

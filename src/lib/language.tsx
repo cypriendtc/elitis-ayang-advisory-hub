@@ -21,6 +21,28 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [language]);
   return <LanguageContext.Provider value={{ language, setLanguage }}>{children}</LanguageContext.Provider>;
 }
+export function usePageMetadata(metadata: {
+  title: string;
+  description: string;
+  ogTitle: string;
+  ogDescription: string;
+}) {
+  const { language } = useLanguage();
+  const { title, description, ogTitle, ogDescription } = metadata;
+  useEffect(() => {
+    document.title = translate(title, language);
+    const tags = [
+      ['meta[name="description"]', description],
+      ['meta[property="og:title"]', ogTitle],
+      ['meta[property="og:description"]', ogDescription],
+    ] as const;
+    for (const [selector, content] of tags) {
+      document.querySelectorAll<HTMLMetaElement>(selector).forEach((tag) => {
+        tag.content = translate(content, language);
+      });
+    }
+  }, [language, title, description, ogTitle, ogDescription]);
+}
 export function useLanguage() {
   const context = useContext(LanguageContext);
   const t = (text: string) => translate(text, context.language);

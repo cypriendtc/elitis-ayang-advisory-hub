@@ -16,6 +16,12 @@ export const Route = createFileRoute("/conseil")({
   }),
   component: () => (
     <ServicePage d={{
+      metadata: {
+        title: "Conseil aux entreprises — ELITIS AYANG",
+        description: "Stratégie, organisation, création d'entreprise et accompagnement des dirigeants au Cameroun.",
+        ogTitle: "Conseil — ELITIS AYANG",
+        ogDescription: "Un regard expert pour structurer et faire grandir vos projets.",
+      },
       eyebrow: "Pôle Conseil",
       title: "Des décisions éclairées, des projets qui avancent.",
       intro: "Nous accompagnons entreprises, institutions et porteurs de projets, de la réflexion stratégique jusqu'à la mise en œuvre concrète.",
