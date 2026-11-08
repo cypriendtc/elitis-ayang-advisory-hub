@@ -6,11 +6,14 @@ import formation from "@/assets/formation.jpg";
 import conciergerie from "@/assets/conciergerie.jpg";
 import about from "@/assets/about.jpg";
 import { CtaBand } from "@/components/site-layout";
+import { useLanguage } from "@/lib/language";
 import { Reveal, Counter } from "@/components/reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "ELITIS AYANG — Cabinet de conseil, formation et conciergerie" },
       { name: "description", content: "ELITIS AYANG accompagne entreprises, dirigeants et voyageurs premium au Cameroun : conseil, formation et conciergerie haut de gamme." },
       { property: "og:title", content: "ELITIS AYANG — Conseil, Formation, Conciergerie" },
@@ -42,7 +45,8 @@ const testimonials = [
 const sectors = ["Hôtellerie", "Banque & Finance", "Industrie", "Institutions", "Commerce", "Immobilier", "Santé", "ONG", "Télécoms", "Transport"];
 
 function Index() {
-  return (
+  const { tree } = useLanguage();
+  return tree(
     <>
       <section className="relative overflow-hidden">
         <img src={hero} alt="Rendez-vous d'affaires à Douala" width={1600} height={1008} className="absolute inset-0 h-full w-full object-cover animate-ken-burns" />

@@ -5,6 +5,8 @@ import { PageHero } from "@/components/site-layout";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Contact — ELITIS AYANG" },
       { name: "description", content: "Contactez le cabinet ELITIS AYANG pour vos besoins en conseil, formation ou conciergerie." },
       { property: "og:title", content: "Contactez ELITIS AYANG" },

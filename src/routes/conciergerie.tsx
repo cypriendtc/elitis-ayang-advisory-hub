@@ -6,6 +6,8 @@ import img from "@/assets/conciergerie.jpg";
 export const Route = createFileRoute("/conciergerie")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Conciergerie haut de gamme au Cameroun — ELITIS AYANG" },
       { name: "description", content: "Accueil, transferts, réservations et assistance privée à Douala et Yaoundé pour voyageurs d'affaires, diaspora et expatriés." },
       { property: "og:title", content: "Conciergerie — ELITIS AYANG" },
